@@ -3,7 +3,7 @@
 
     </div>
     <div class="flex flex-col gap-5 pt-10 overflow-hidden">
-        <span>titlte</span>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, minus?</p>
+        <span>{{$title}}</span>
+        <p>{{$description}}</p>
     </div>
 </div>

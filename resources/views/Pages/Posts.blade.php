@@ -10,10 +10,11 @@
     title='Создать Пост'
     link='#'/></div>
 <div class="grid grid-cols-2 w-full gap-5 xl:grid-cols-3">
-
-<x-postPreview/>
-<x-postPreview/>
-<x-postPreview/>
+    @foreach ($posts as $post)
+    <x-postPreview
+        :title='$post->title'
+        :description='$post->content'/>
+    @endforeach
 
 </div>
         </div>
