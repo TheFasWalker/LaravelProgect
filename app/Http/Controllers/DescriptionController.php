@@ -8,6 +8,6 @@ class DescriptionController extends Controller
 {
     public function index()
     {
-        return view('Pages.index');
+        return view('Pages.About');
     }
 }

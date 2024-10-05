@@ -9,7 +9,9 @@ class PostController extends Controller
 {
     public function index()
     {
-        return view('Pages.index');
+        $posts = Post::all();
+
+        return view('Pages.Posts');
     }
 
 
