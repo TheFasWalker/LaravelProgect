@@ -5,6 +5,13 @@
 
 <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
   <h1 class=" text-2xl text-bold">PostsPage</h1>
+  @if(!count($posts))
+  <div class=" w-[500px] pt-7 flex flex-col gap-10 text-center">
+    <h2 class=" font-black text-3xl">Постов несуществует</h2>
+    <x-ui.button-link
+    title='Создать Пост'
+    link='/data/post/create'/></div>
+  @else
   <div class="ml-auto py-5">
     <x-ui.button-link
     title='Создать Пост'
@@ -20,6 +27,8 @@
     @endforeach
 
 </div>
+  @endif
+
         </div>
 
 

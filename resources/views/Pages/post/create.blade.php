@@ -32,6 +32,7 @@
         title='Контент статьи'
         name='content'
         placeholder='Контент'
+        value=''
 
     />
     <div class="grid grid-cols-2 gap-3">
