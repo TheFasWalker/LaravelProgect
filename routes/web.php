@@ -12,7 +12,7 @@ Route::get('/', function () {
 
 Route::prefix('/data')->group(function(){
     Route::get('/', [PostController::class, 'index'])->name('data');
-    Route::get('/data/post/create',[PostController::class, 'create'])->name('post.create');
+    Route::get('/post/create',[PostController::class, 'create'])->name('post.create');
     // Route::get('/data/post/{$id}/edit',[PostController::class, 'update'])->name('post.update');
     // Route::get('/data/post/{$id}/delete',[PostController::class, 'delete'])->name('post.delete');
 });

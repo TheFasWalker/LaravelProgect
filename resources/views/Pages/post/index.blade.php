@@ -8,7 +8,7 @@
   <div class="ml-auto py-5">
     <x-ui.button-link
     title='Создать Пост'
-    link='#'/></div>
+    link='/data/post/create'/></div>
 <div class="grid grid-cols-2 w-full gap-5 xl:grid-cols-3">
     @foreach ($posts as $post)
     <x-postPreview

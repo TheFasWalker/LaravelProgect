@@ -10,22 +10,12 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
-        return view('Pages.Posts',compact('posts'));
+        return view('Pages.post.index',compact('posts'));
     }
-
-
     public function create(){
-      return view('Pages.Posts.CreatePost');
+      return view('Pages.post.create');
 
     }
 
-    public function update()
-    {
-DD('update');
-    }
-    public function delete()
-    {
-DD ('delete');
-    }
 
 }

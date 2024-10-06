@@ -30,10 +30,6 @@
         placeholder='placeholder'
 
     />
-
-   
-
-
     <x-ui.button
         title="Создать элемент"
     />
