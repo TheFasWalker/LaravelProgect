@@ -24,6 +24,7 @@ Route::prefix('/data')->group(function(){
     Route::prefix('/categories')->group(function(){
         Route::get('/', [CategoryController::class, 'index'])->name('categories');
         Route::get('/create',[CategoryController::class, 'create'])->name('categories.create');
+        Route::post('/', [CategoryController::class, 'store'])->name('categories.store');
     });
    
 });

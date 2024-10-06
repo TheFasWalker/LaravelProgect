@@ -16,9 +16,21 @@ class CategoryController extends Controller
         return view('Pages.category.create');
     }
 
+    public function store(){
+    
+        $data = request()->validate([
+            'title'=>'string'
+        ]);
+
+        Category::create($data);
+        return redirect()->route('categories');
+    }
+
+
+
     // public function edit(){}
 
-    // public function store(){}
+
 
     // public function delete(){}
 }
