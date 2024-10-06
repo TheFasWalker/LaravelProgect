@@ -27,11 +27,22 @@ class CategoryController extends Controller
     }
 
     public function edit(Category $category){
-        // dd($category);
         return view('Pages.category.edit',compact('category'));
+    }
+
+    public function update(Category $category){
+        $data = request()->validate([
+            'title'=>'string'
+        ]);
+        $category->update($data);
+        return redirect()->route('categories');
+
     }
 
 
 
-    // public function delete(){}
+    public function destroy(Category $category){
+        $category->delete();
+        return redirect()->route('categories');
+    }
 }

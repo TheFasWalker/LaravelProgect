@@ -31,7 +31,7 @@
                 title="edit"
                 :link="route('categories.edit', $category->id)"/>
                 <x-ui.deleteElement
-                route='#'/>
+                :route="route('categories.delete', $category->id)"/>
             </div>
         </div>
         @endforeach
