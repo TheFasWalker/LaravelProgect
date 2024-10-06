@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\DescriptionController;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/', function () {
     return view('Pages.index');
@@ -19,6 +20,10 @@ Route::prefix('/data')->group(function(){
         Route::get('/{post}/edit',[PostController::class, 'edit'])->name('post.edit');
         Route::patch('/{post}',[PostController::class, 'update'])->name('post.update');
         Route::delete('/{post}',[PostController::class, 'destroy'])->name('post.delete');
+    });
+    Route::prefix('/categories')->group(function(){
+        Route::get('/', [CategoryController::class, 'index'])->name('categories');
+        Route::get('/create',[CategoryController::class, 'create'])->name('categories.create');
     });
    
 });
