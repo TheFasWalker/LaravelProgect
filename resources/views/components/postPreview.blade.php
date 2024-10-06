@@ -1,4 +1,4 @@
-<div class="p-5 rounded-lg shadow-md aspect-square">
+<div class="p-5 rounded-lg shadow-md aspect-square relative">
     <div class=" aspect-video w-full bg-slate-600">
     @if ($image !== '')
             <img class="w-full h-full object-cover" src="{{$image}}" alt="">
@@ -10,4 +10,7 @@
         <span>{{$title}}</span>
         <p>{{$description}}</p>
     </div>
+    @if($published == true)
+        <span class="block p-2 bg-gray-700 w-fit text-white rounded-lg absolute top-4 right-4 rotate-12 text-lg">Not published</span>
+    @endif
 </div>

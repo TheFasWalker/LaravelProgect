@@ -14,7 +14,8 @@
     <x-postPreview
         :title='$post->title'
         :description='$post->content'
-        :image='$post->image'/>
+        :image='$post->image'
+        :published='$post->is_published'/>
     @endforeach
 
 </div>
