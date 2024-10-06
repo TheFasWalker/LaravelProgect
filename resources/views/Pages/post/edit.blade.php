@@ -36,6 +36,11 @@
         value='{{$post->content}}'
 
     />
+    <x-ui.form.select
+    :data='$categories'
+    name="category_id"
+    :activeId='$post->category->id'
+/>
     <div class="grid grid-cols-3 gap-3">
         <x-ui.button
             title="Сохранить"

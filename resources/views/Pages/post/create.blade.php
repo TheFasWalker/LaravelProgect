@@ -35,6 +35,11 @@
         value=''
 
     />
+        <x-ui.form.select
+            :data='$categories'
+            name="category_id"
+            activeId='0'
+        />
     <div class="grid grid-cols-2 gap-3">
         <x-ui.button
             title="Создать элемент"
