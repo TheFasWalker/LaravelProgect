@@ -40,7 +40,7 @@
         />
         <x-ui.button-link
             title='Назад'
-            link='/data/'
+            :link="route('data')"
         />
     </div>
 

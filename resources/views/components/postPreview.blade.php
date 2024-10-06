@@ -13,4 +13,15 @@
     @if($published == true)
         <span class="block p-2 bg-gray-700 w-fit text-white rounded-lg absolute top-4 right-4 rotate-12 text-lg">Published</span>
     @endif
+    <div class="grid grid-cols-2 gap-2">
+        
+        <x-ui.button-link
+            title="Подробнее"
+            link='/data/post/{{$postId}}'
+        />
+        <x-ui.button-link
+        title="Редактировать"
+        link=''
+    />
+    </div>
 </div>

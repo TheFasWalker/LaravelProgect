@@ -25,9 +25,7 @@ class PostController extends Controller
         Post::create($data);
         return redirect()->route('data');
     }
-    public function show($id){
-        $post = Post::find($id);
-        // dd($post->title);
+    public function show(Post $post){
         return view('Pages.post.postDetail', compact('post'));
     }
 

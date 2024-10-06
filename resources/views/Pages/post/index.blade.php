@@ -15,7 +15,8 @@
         :title='$post->title'
         :description='$post->content'
         :image='$post->image'
-        :published='$post->is_published'/>
+        :published='$post->is_published'
+        :postId='$post->id'/>
     @endforeach
 
 </div>
