@@ -17,11 +17,11 @@
         
         <x-ui.button-link
             title="Подробнее"
-            link='/data/post/{{$postId}}'
+            :link="route('post.show', $postId)"
         />
         <x-ui.button-link
         title="Редактировать"
-        link='/data/post/{{$postId}}/edit'
+        :link="route('post.edit', $postId)"
     />
     </div>
 </div>
