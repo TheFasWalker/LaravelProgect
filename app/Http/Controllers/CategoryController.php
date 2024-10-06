@@ -12,7 +12,9 @@ class CategoryController extends Controller
         return view('Pages.category.index', compact('categories'));
     }
 
-    // public function create(){}
+    public function create(){
+        return view('Pages.category.create');
+    }
 
     // public function edit(){}
 
