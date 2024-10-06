@@ -7,10 +7,15 @@ use App\Http\Controllers\DescriptionController;
 Route::get('/', function () {
     return view('Pages.index');
 });
-Route::get('/post', [PostController::class, 'index'])->name('post');
-Route::get('/post/create',[PostController::class, 'create']);
-// Route::get('/post/update',[PostController::class, 'update']);
-// Route::get('/post/delete',[PostController::class, 'delete']);
+
+
+
+Route::prefix('/data')->group(function(){
+    Route::get('/', [PostController::class, 'index'])->name('data');
+    Route::get('/data/post/create',[PostController::class, 'create'])->name('post.create');
+    // Route::get('/data/post/{$id}/edit',[PostController::class, 'update'])->name('post.update');
+    // Route::get('/data/post/{$id}/delete',[PostController::class, 'delete'])->name('post.delete');
+});
 
 
 Route::get('/description', [DescriptionController::class, 'index'])->name('description');
