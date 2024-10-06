@@ -15,7 +15,7 @@ Route::prefix('/data')->group(function(){
     Route::prefix('/post')->group(function(){
         Route::get('/create',[PostController::class, 'create'])->name('post.create');
         Route::post('/',[PostController::class, 'store'])->name('post.store');
-        // Route::get('/{$id}/edit',[PostController::class, 'update'])->name('post.update');
+        Route::get('/{post}',[PostController::class, 'show'])->name('post.show');
         // Route::get('/{$id}/delete',[PostController::class, 'delete'])->name('post.delete');
     });
    

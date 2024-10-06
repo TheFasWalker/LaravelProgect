@@ -22,10 +22,13 @@ class PostController extends Controller
             'content'=>'string',
             'image'=>'string'
         ]);
-        // dd($data); 
         Post::create($data);
         return redirect()->route('data');
-    
+    }
+    public function show($id){
+        $post = Post::find($id);
+        // dd($post->title);
+        return view('Pages.post.postDetail', compact('post'));
     }
 
 
