@@ -15,7 +15,7 @@ class PostController extends Controller
 
 
     public function create(){
-       DD('create');
+      return view('Pages.Posts.CreatePost');
 
     }
 
