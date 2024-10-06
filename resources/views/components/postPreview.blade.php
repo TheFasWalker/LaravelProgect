@@ -13,15 +13,17 @@
     @if($published == true)
         <span class="block p-2 bg-gray-700 w-fit text-white rounded-lg absolute top-4 right-4 rotate-12 text-lg">Published</span>
     @endif
-    <div class="grid grid-cols-2 gap-2">
+    <div class="grid grid-cols-3 gap-2">
         
         <x-ui.button-link
-            title="Подробнее"
+            title="more"
             :link="route('post.show', $postId)"
         />
         <x-ui.button-link
-        title="Редактировать"
+        title="edit"
         :link="route('post.edit', $postId)"
     />
+    <x-ui.deleteElement
+    :route="route('post.delete', $postId)"/>
     </div>
 </div>
