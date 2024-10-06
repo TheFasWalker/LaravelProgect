@@ -14,15 +14,19 @@
     
     @endif
   </div>
-   
-    <div class="">
-        <span>Заголовок:</span>
+   <div class="w-full flex flex-col gap-3">
+
+    <div class="flex flex-row gap-2 w-full">
+        <span class=" font-bold">Заголовок:</span>
         <span>{{$post->title}}</span>
     </div>
-    <div class="">
-        <span>Содержимое поста</span>
+    <div class="flex flex-row gap-2 w-full">
+        <span class=" font-bold">Содержимое поста:</span>
         <p>{{$post->content}}</p>
     </div>
+    <div class="flex flex-row gap-2 w-full"><span class=" font-bold">категория:</span>
+    <span >{{$post->category->title}}</span></div>
+   </div>
     <div class="w-full grid grid-cols-3 gap-3">
         <x-ui.button-link
             title="Назад к постам"

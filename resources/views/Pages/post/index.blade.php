@@ -23,7 +23,8 @@
         :description='$post->content'
         :image='$post->image'
         :published='$post->is_published'
-        :postId='$post->id'/>
+        :postId='$post->id'
+        :category='$post->category->title'/>
     @endforeach
 
 </div>

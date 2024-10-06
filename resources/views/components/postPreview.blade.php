@@ -26,4 +26,8 @@
     <x-ui.deleteElement
     :route="route('post.delete', $postId)"/>
     </div>
+    @if(isset($category))
+        <span class="block p-2 bg-gray-700 w-fit text-white rounded-lg absolute top-4 left-4 -rotate-12 text-lg">{{$category ? $category : 'No Category'}}</span>
+    @endif
+
 </div>
