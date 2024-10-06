@@ -13,7 +13,8 @@
     @foreach ($posts as $post)
     <x-postPreview
         :title='$post->title'
-        :description='$post->content'/>
+        :description='$post->content'
+        :image='$post->image'/>
     @endforeach
 
 </div>
