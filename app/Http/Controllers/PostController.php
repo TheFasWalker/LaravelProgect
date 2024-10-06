@@ -29,6 +29,9 @@ class PostController extends Controller
         return view('Pages.post.postDetail', compact('post'));
     }
 
+    public function edit(Post $post){
+        return view('Pages.post.edit', compact('post'));
+    }
 
 
 }

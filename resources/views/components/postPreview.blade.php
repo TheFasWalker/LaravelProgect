@@ -21,7 +21,7 @@
         />
         <x-ui.button-link
         title="Редактировать"
-        link=''
+        link='/data/post/{{$postId}}/edit'
     />
     </div>
 </div>
