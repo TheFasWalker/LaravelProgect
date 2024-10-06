@@ -26,9 +26,10 @@ class CategoryController extends Controller
         return redirect()->route('categories');
     }
 
-
-
-    // public function edit(){}
+    public function edit(Category $category){
+        // dd($category);
+        return view('Pages.category.edit',compact('category'));
+    }
 
 
 

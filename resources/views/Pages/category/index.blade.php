@@ -12,16 +12,31 @@
     title='Создать Категорию'
     :link="route('categories.create')"/></div>
   @else
-  <div class="ml-auto py-5">
-    <x-ui.button-link
-    title='Создать Категорию'
-    :link="route('categories.create')"/></div>
-<div class="grid grid-cols-2 w-full gap-5 xl:grid-cols-3">
-    @foreach ($categories as $category)
+    <div class="ml-auto py-5">
+        <x-ui.button-link
+            title='Создать Категорию'
+            :link="route('categories.create')"/>
+    </div>
+    <div class="grid w-full  grid-rows-[50px_1fr]  overflow-x-auto">
+        <div class="grid grid-cols-[1fr_500px] w-full shadow-sm p-1">
+            <span class=" flex items-center ">Название категории</span>
+            <span class=" flex items-center justify-center">Действия</span>
 
-    @endforeach
+        </div>
+        @foreach ($categories as $category)
+        <div class="grid grid-cols-[1fr_500px] w-full shadow-sm p-1">
+            <span>{{$category->title}}</span>
+            <div class="grid grid-cols-2 gap-2">
+                <x-ui.button-link 
+                title="edit"
+                :link="route('categories.edit', $category->id)"/>
+                <x-ui.deleteElement
+                route='#'/>
+            </div>
+        </div>
+        @endforeach
 
-</div>
+    </div>
   @endif
 
         </div>
