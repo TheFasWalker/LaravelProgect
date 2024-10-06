@@ -5,8 +5,9 @@
 
 <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
   <h1 class=" text-2xl text-bold">Создание Элемента</h1>
-<form action="#">
-    <x-ui.formInputField
+<form action="#" class=" w-full flex flex-col gap-5">
+    <div class="grid grid-cols-3 gap-3">
+        <x-ui.formInputField
         title='title'
         name='name'
         plaseholder='plaseholder'
@@ -23,9 +24,18 @@
         type=''
     />
 
-<x-ui.button
-title="buttonText"
-/>
+    </div>
+    <x-ui.formTextField
+        title='Поле ввода'
+        name='fieldName'
+        placeholder='placeholder'
+
+    />
+
+
+    <x-ui.button
+        title="Создать элемент"
+    />
 
 </form>
         </div>
