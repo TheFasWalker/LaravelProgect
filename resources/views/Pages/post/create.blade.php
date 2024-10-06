@@ -8,21 +8,25 @@
 <form action="{{route('post.store')}}" method="POST" class=" w-full flex flex-col gap-5">
     @csrf
     <div class="grid grid-cols-3 gap-3">
-
-    <x-ui.form.InputField
-        title='Заголовок статьи'
-        name='title'
-        plaseholder='Заголовок'
+        <x-ui.form.InputField
+            title='Заголовок статьи'
+            name='title'
+            plaseholder='Заголовок'
+            value=''
+            type='text'
+        />
+        <x-ui.form.InputField
+        title='Ссылка на фото'
+        name='image'
+        plaseholder='Ссылка на фото'
         value=''
         type='text'
-    />
-    <x-ui.form.InputField
-    title='Ссылка на фото'
-    name='image'
-    plaseholder='Ссылка на фото'
-    value=''
-    type='text'
-/>
+        />
+        <x-ui.form.checkbox
+            title='Статус публикации'
+            name='is_published'
+            value=''
+        />
     </div>
     <x-ui.form.TextField
         title='Контент статьи'
