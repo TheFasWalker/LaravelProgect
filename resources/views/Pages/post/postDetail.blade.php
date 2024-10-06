@@ -23,8 +23,17 @@
         <span>Содержимое поста</span>
         <p>{{$post->content}}</p>
     </div>
-    
-        </div>
+    <div class="w-full grid grid-cols-3 gap-3">
+        <x-ui.button-link
+            title="Назад к постам"
+            :link="route('data')"
+        />
+        <x-ui.button-link
+        title="редактировать пост"
+        :link="route('post.edit', $post->id)"
+        />
+    </div>
+</div>
 
 
 @endsection
