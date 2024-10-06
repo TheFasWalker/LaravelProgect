@@ -16,6 +16,18 @@ class PostController extends Controller
       return view('Pages.post.create');
 
     }
+    public function store(){
+        $data = request()->validate([
+            'title'=>'string',
+            'content'=>'string',
+            'image'=>'string'
+        ]);
+        // dd($data); 
+        Post::create($data);
+        return redirect()->route('data');
+    
+    }
+
 
 
 }
