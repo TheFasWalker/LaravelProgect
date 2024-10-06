@@ -32,6 +32,15 @@ class PostController extends Controller
     public function edit(Post $post){
         return view('Pages.post.edit', compact('post'));
     }
+    public function update(Post $post){
+        $data = request()->validate([
+            'title'=>'string',
+            'content'=>'string',
+            'image'=>'string'
+        ]);
+        $post->update($data);
+        return redirect()->route('post.show',$post->id);
+    }
 
 
 }

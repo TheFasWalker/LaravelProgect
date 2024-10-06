@@ -17,7 +17,7 @@ Route::prefix('/data')->group(function(){
         Route::post('/',[PostController::class, 'store'])->name('post.store');
         Route::get('/{post}',[PostController::class, 'show'])->name('post.show');
         Route::get('/{post}/edit',[PostController::class, 'edit'])->name('post.edit');
-        Route::patch('/{$id}',[PostController::class, 'update'])->name('post.update');
+        Route::patch('/{post}',[PostController::class, 'update'])->name('post.update');
     });
    
 });
