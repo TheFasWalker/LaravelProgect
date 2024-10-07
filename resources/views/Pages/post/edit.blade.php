@@ -41,6 +41,12 @@
     name="category_id"
     :activeId='$post->category->id'
 />
+<x-ui.form.multiselect
+title="Выбранные тэги"
+name="tags[]"
+:data="$tags"
+:activeElems='$post->tags'
+/>
     <div class="grid grid-cols-2 gap-3">
         <x-ui.button
             title="Сохранить"

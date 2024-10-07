@@ -32,7 +32,7 @@ class PostController extends Controller
        
         $tags= $data['tags'];
         unset($data['tags']);
-        
+
         $post = Post::create($data);
         $post->tags()->attach($tags);
 
@@ -44,7 +44,8 @@ class PostController extends Controller
 
     public function edit(Post $post){
         $categories = Category::all();
-        return view('Pages.post.edit', compact('post','categories'));
+        $tags = Tag::all();
+        return view('Pages.post.edit', compact('post','categories','tags'));
     }
     public function update(Post $post){
 
