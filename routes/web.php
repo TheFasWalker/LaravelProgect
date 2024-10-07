@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\DescriptionController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TagController;
 
 Route::get('/', function () {
     return view('Pages.index');
@@ -30,7 +31,7 @@ Route::prefix('/data')->group(function(){
         Route::delete('/{category}',[CategoryController::class, 'destroy'])->name('categories.delete');
     });
     Route::prefix('/tags')->group(function(){
-        // Route::get('/',[TagController::class, 'index'])->name('tags');
+        Route::get('/',[TagController::class, 'index'])->name('tags');
         // Route::get('/create',[TagController::class, 'create'])->name('tags.create');
         // Route::post('/',[TagController::class, 'store'])->name('tags.store');
         // Route::get('/{tag}/edit', [TagController::class, 'edit'])->name('tags.edit');

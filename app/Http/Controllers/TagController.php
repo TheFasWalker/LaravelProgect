@@ -7,7 +7,10 @@ use App\Models\Tag;
 
 class TagController extends Controller
 {
-    public function index(){}
+    public function index(){
+        $tags = Tag::all();
+        return view('Pages.tags.index',compact('tags'));
+    }
     
     public function create(){}
     
