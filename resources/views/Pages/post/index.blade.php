@@ -12,10 +12,18 @@
     title='Создать Пост'
     link='/data/post/create'/></div>
   @else
-  <div class="ml-auto py-5">
-    <x-ui.button-link
-    title='Создать Пост'
-    link='/data/post/create'/></div>
+  <div class="flex justify-between w-full py-5">
+    <div class="flex flex-row gap-4">
+      <a class="{{ request('is_published') == '' ? 'bg-slate-500 text-white' : ' text-black bg-slate-200 hover:bg-slate-400' }} shadow-xl h-fit p-2 rounded-lg " href="?is_published">all</a>
+      <a class="{{ request('is_published') == 'yes' ? 'bg-slate-500 text-white' : ' text-black bg-slate-200 hover:bg-slate-400' }} shadow-xl h-fit p-2 rounded-lg " href="?is_published=yes">Published</a>
+      <a class="{{ request('is_published') == 'no' ? 'bg-slate-500 text-white' : ' text-black bg-slate-200 hover:bg-slate-400' }} shadow-xl h-fit p-2 rounded-lg " href="?is_published=no">Not Published</a>
+    </div>
+    <div class=" w-64">
+      <x-ui.button-link
+      title='Создать Пост'
+      link='/data/post/create'/>
+    </div>
+</div>
 <div class="grid grid-cols-2 w-full gap-5 xl:grid-cols-3">
     @foreach ($posts as $post)
     <x-postPreview

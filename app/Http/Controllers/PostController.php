@@ -10,9 +10,16 @@ use App\Models\PostTag;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::all();
+        
+        $published = $request->query('is_published');
+        $posts =match ($published) {
+            'yes' => Post::where('is_published', true)->get(),
+             'no'=> Post::where('is_published', false)->get(),
+             default => Post::all()
+        };
+
         return view('Pages.post.index',compact('posts'));
     }
     public function create(){
