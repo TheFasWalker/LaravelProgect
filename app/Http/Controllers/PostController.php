@@ -37,6 +37,7 @@ class PostController extends Controller
         return view('Pages.post.edit', compact('post','categories'));
     }
     public function update(Post $post){
+
         $data = request()->validate([
             'title'=>'string',
             'content'=>'string',

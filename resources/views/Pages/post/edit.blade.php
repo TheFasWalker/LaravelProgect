@@ -41,7 +41,7 @@
     name="category_id"
     :activeId='$post->category->id'
 />
-    <div class="grid grid-cols-3 gap-3">
+    <div class="grid grid-cols-2 gap-3">
         <x-ui.button
             title="Сохранить"
         />
@@ -49,8 +49,7 @@
             title='Назад'
             :link="route('data')"
         />
-        <x-ui.deleteElement
-        :route="route('post.delete', $post->id)"/>
+
     </div>
 
 
