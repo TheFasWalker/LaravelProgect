@@ -27,6 +27,16 @@
     <div class="flex flex-row gap-2 w-full"><span class=" font-bold">категория:</span>
     <span >{{$post->category->title}}</span></div>
    </div>
+   <div class="flex py-3 items-start w-full gap-2">
+    @if(count($post->tags))
+    <span class=" font-bold">Тэги:</span>
+        @foreach($post->tags as $tag)
+            <a class=" bg-green-400 py-1 px-2 rounded-2xl text-white font-bold" href="#"> {{$tag->title}}</a>
+        @endforeach
+    @else
+        <span class="bg-green-400 py-1 px-2 rounded-2xl text-white font-bold"> no tags</span>
+    @endif
+</div>
     <div class="w-full grid grid-cols-3 gap-3">
         <x-ui.button-link
             title="Назад к постам"
