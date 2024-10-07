@@ -30,7 +30,13 @@ class TagController extends Controller
 
     }
     
-    public function update(){}
+    public function update(Tag $tag){
+        $data=request()->validate([
+            'title'=>'string'
+        ]);
+        $tag->update($data);
+        return redirect()->route('tags');
+    }
     
     public function delete(){}
 }
