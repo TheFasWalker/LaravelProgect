@@ -15,7 +15,7 @@
     <div class="ml-auto py-5">
         <x-ui.button-link
             title='Создать Тэг'
-            link='#'/>
+            :link="route('tags.create')"/>
     </div>
     <div class="grid w-full  grid-rows-[50px_1fr]  overflow-x-auto">
         <div class="grid grid-cols-[1fr_500px] w-full shadow-sm p-1">
@@ -23,18 +23,18 @@
             <span class=" flex items-center justify-center">Действия</span>
 
         </div>
-        {{-- @foreach ($categories as $category)
+        @foreach ($tags as $tag)
         <div class="grid grid-cols-[1fr_500px] w-full shadow-sm p-1">
-            <span>{{$category->title}}</span>
+            <span>{{$tag->title}}</span>
             <div class="grid grid-cols-2 gap-2">
                 <x-ui.button-link 
                 title="edit"
-                :link="route('categories.edit', $category->id)"/>
+                link="route('categories.edit', $tag->id)"/>
                 <x-ui.deleteElement
-                :route="route('categories.delete', $category->id)"/>
+                route="route('categories.delete', $tag->id)"/>
             </div>
         </div>
-        @endforeach --}}
+        @endforeach 
 
     </div>
   @endif
