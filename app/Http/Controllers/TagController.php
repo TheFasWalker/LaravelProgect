@@ -16,7 +16,14 @@ class TagController extends Controller
        return view ('Pages.tags.create');
     }
     
-    public function store(){}
+    public function store(){
+        $data = request()->validate([
+            'title'=>'string'
+        ]);
+        Tag::create($data);
+        return redirect()->route('tags');
+        
+    }
     
     public function edit(){}
     
