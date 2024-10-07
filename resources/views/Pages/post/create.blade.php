@@ -40,6 +40,12 @@
             name="category_id"
             activeId='0'
         />
+        <x-ui.form.multiselect
+            title="Выберите тэги"
+            name="tags"
+            :data="$tags"
+        />
+
     <div class="grid grid-cols-2 gap-3">
         <x-ui.button
             title="Создать элемент"
