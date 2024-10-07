@@ -10,7 +10,7 @@
     <h2 class=" font-black text-3xl">Тэгов не существует</h2>
     <x-ui.button-link
     title='Создать Тэг'
-    link='#'/></div>
+    :link="route('tags.create')"/></div>
   @else
     <div class="ml-auto py-5">
         <x-ui.button-link

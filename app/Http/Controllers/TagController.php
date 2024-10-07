@@ -12,7 +12,9 @@ class TagController extends Controller
         return view('Pages.tags.index',compact('tags'));
     }
     
-    public function create(){}
+    public function create(){
+       return view ('Pages.tags.create');
+    }
     
     public function store(){}
     
