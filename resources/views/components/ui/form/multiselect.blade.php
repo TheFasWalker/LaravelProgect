@@ -3,7 +3,7 @@
     <span>{{$title}}</span>
     <span>выбор Ctrl+ЛКМ</span>
 </span>  
-<select name="{{$name}}" multiple>
+<select name="{{$name}}" multiple required>
     @if(isset($activeElems))
         @foreach ($data as $elem)
             <option
