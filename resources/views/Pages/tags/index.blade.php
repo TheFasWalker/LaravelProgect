@@ -29,7 +29,7 @@
             <div class="grid grid-cols-2 gap-2">
                 <x-ui.button-link 
                 title="edit"
-                link="route('categories.edit', $tag->id)"/>
+                :link="route('tags.edit', $tag->id)"/>
                 <x-ui.deleteElement
                 route="route('categories.delete', $tag->id)"/>
             </div>

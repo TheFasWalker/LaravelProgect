@@ -25,7 +25,10 @@ class TagController extends Controller
         
     }
     
-    public function edit(){}
+    public function edit(Tag $tag){
+        return view('Pages.tags.edit', compact('tag'));
+
+    }
     
     public function update(){}
     
