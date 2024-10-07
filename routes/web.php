@@ -36,7 +36,7 @@ Route::prefix('/data')->group(function(){
         Route::post('/',[TagController::class, 'store'])->name('tags.store');
         Route::get('/{tag}/edit', [TagController::class, 'edit'])->name('tags.edit');
         Route::patch('/{tag}', [TagController::class , 'update'])->name('tags.update');
-        // Route::delete('/{tag}',[TagController::class, 'destroy'])->name('tags.delete');
+        Route::delete('/{tag}',[TagController::class, 'destroy'])->name('tags.delete');
     });
    
 });

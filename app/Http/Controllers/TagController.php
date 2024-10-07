@@ -38,5 +38,8 @@ class TagController extends Controller
         return redirect()->route('tags');
     }
     
-    public function delete(){}
+    public function destroy(Tag $tag){
+        $tag->delete();
+        return redirect()->route('tags');
+    }
 }
