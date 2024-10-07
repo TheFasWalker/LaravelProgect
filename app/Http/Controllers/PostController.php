@@ -27,9 +27,13 @@ class PostController extends Controller
             'content'=>'string',
             'image'=>'string',
             'category_id'=>'',
-            'tags'=>''
+            'tags'=>'',
+            'is_published'=>''
         ]);
-       
+        if(isset($data['is_published'])){
+            $data['is_published']= 1;
+        }
+
         $tags= $data['tags'];
         unset($data['tags']);
 
@@ -54,8 +58,14 @@ class PostController extends Controller
             'content'=>'string',
             'image'=>'string',
             'category_id'=>'',
-            'tags'=>''
+            'tags'=>'',
+            'is_published'=>''
         ]);
+        if(isset($data['is_published'])){
+            $data['is_published']= 1;
+        }else{
+            $data['is_published']= 0;
+        }
         $tags= $data['tags'];
         unset($data['tags']);
         $post->tags()->sync($tags);

@@ -26,7 +26,7 @@
         <x-ui.form.checkbox
             title='Статус публикации'
             name='is_published'
-            value=''
+            :checked='$post->is_published'
         />
     </div>
     <x-ui.form.TextField
