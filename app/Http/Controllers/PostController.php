@@ -53,9 +53,16 @@ class PostController extends Controller
             'title'=>'string',
             'content'=>'string',
             'image'=>'string',
-            'category_id'=>''
+            'category_id'=>'',
+            'tags'=>''
         ]);
+        $tags= $data['tags'];
+        unset($data['tags']);
+        $post->tags()->sync($tags);
+
         $post->update($data);
+        
+
         return redirect()->route('post.show',$post->id);
     }
     public function destroy(Post $post){
