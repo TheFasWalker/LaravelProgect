@@ -5,7 +5,19 @@
     @else
     <img class="w-full h-full object-cover" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png" alt="">
     @endif
+
     </div>
+
+    <div class="flex gap-1 py-3">
+        @if(count($tags))
+            @foreach($tags as $tag)
+                <a class=" bg-green-400 py-1 px-2 rounded-2xl text-white font-bold" href="#"> {{$tag->title}}</a>
+            @endforeach
+        @else
+            <span class="bg-green-400 py-1 px-2 rounded-2xl text-white font-bold"> no tags</span>
+        @endif
+    </div>
+
     <div class="flex flex-col gap-5 pt-10 overflow-hidden">
         <span>{{$title}}</span>
         <p>{{$description}}</p>

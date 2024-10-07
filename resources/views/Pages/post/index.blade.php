@@ -24,7 +24,8 @@
         :image='$post->image'
         :published='$post->is_published'
         :postId='$post->id'
-        :category="$post->category ? $post->category->title : ''"/>
+        :category="$post->category ? $post->category->title : ''"
+        :tags='$post->tags'/>
     @endforeach
 
 </div>
