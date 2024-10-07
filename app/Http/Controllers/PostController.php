@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Post\StoreRequest;
+use App\Http\Requests\Post\UpdateRequest;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
@@ -28,15 +30,10 @@ class PostController extends Controller
       return view('Pages.post.create',compact('categories', 'tags'));
 
     }
-    public function store(){
-        $data = request()->validate([
-            'title'=>'string',
-            'content'=>'string',
-            'image'=>'string',
-            'category_id'=>'',
-            'tags'=>'',
-            'is_published'=>''
-        ]);
+    public function store(StoreRequest $request){
+
+        $data = $request->validated();
+
         if(isset($data['is_published'])){
             $data['is_published']= 1;
         }
@@ -58,16 +55,12 @@ class PostController extends Controller
         $tags = Tag::all();
         return view('Pages.post.edit', compact('post','categories','tags'));
     }
-    public function update(Post $post){
+    public function update(Post $post, UpdateRequest $request){
 
-        $data = request()->validate([
-            'title'=>'string',
-            'content'=>'string',
-            'image'=>'string',
-            'category_id'=>'',
-            'tags'=>'',
-            'is_published'=>''
-        ]);
+        $data = $request->validated();
+
+
+
         if(isset($data['is_published'])){
             $data['is_published']= 1;
         }else{
