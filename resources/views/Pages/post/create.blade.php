@@ -42,7 +42,7 @@
         />
         <x-ui.form.multiselect
             title="Выберите тэги"
-            name="tags"
+            name="tags[]"
             :data="$tags"
         />
 

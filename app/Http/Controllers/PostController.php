@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\Tag;
+use App\Models\PostTag;
 
 class PostController extends Controller
 {
@@ -25,9 +26,23 @@ class PostController extends Controller
             'title'=>'string',
             'content'=>'string',
             'image'=>'string',
-            'category_id'=>''
+            'category_id'=>'',
+            'tags'=>''
         ]);
-        Post::create($data);
+       
+        $tags= $data['tags'];
+        unset($data['tags']);
+
+        // dd($tags,$data);
+        $post = Post::create($data);
+
+        foreach($tags as $tag){
+            PostTag::firstOrCreate([
+                'tag_id'=> $tag,
+                'post_id'=>$post->id
+            ]);
+        }
+
         return redirect()->route('data');
     }
     public function show(Post $post){
