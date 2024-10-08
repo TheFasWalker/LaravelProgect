@@ -4,11 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tag;
+use App\Repositories\TagRepository;
 
 class TagController extends Controller
 {
+    private $tagRepository;
+
+    public function __construct(TagRepository $tagRepository)
+    {
+        $this->tagRepository= $tagRepository;
+    }
+
     public function index(){
-        $tags = Tag::all();
+
+        $tags = $this->tagRepository->all();
         return view('Pages.tags.index',compact('tags'));
     }
     
@@ -20,7 +29,8 @@ class TagController extends Controller
         $data = request()->validate([
             'title'=>'string'
         ]);
-        Tag::create($data);
+        $this->tagRepository->store($data);
+
         return redirect()->route('tags');
         
     }
@@ -34,7 +44,8 @@ class TagController extends Controller
         $data=request()->validate([
             'title'=>'string'
         ]);
-        $tag->update($data);
+
+        $this->tagRepository->update($data,$tag);
         return redirect()->route('tags');
     }
     
