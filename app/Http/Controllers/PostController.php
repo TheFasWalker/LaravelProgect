@@ -23,11 +23,7 @@ class PostController extends Controller
     {
         
         $published = $request->query('is_published');
-        $posts =match ($published) {
-            'yes' => Post::where('is_published', true)->get(),
-             'no'=> Post::where('is_published', false)->get(),
-            default => $this->postRepository->all()
-        };
+        $posts= $this->postRepository->all($published);
 
         return view('Pages.post.index',compact('posts'));
     }
