@@ -56,19 +56,7 @@ class PostController extends Controller
 
         $data = $request->validated();
 
-
-
-        if(isset($data['is_published'])){
-            $data['is_published']= 1;
-        }else{
-            $data['is_published']= 0;
-        }
-        $tags= $data['tags'];
-        unset($data['tags']);
-        $post->tags()->sync($tags);
-
-        $post->update($data);
-        
+        $this->postRepository->update($post,$data);
 
         return redirect()->route('post.show',$post->id);
     }

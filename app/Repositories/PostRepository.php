@@ -27,4 +27,17 @@ class PostRepository implements PostRepositoryInterfase
         $post = Post::create($data);
         $post->tags()->attach($tags);
     }
+
+    public function update($post ,$data){
+        if(isset($data['is_published'])){
+            $data['is_published']= 1;
+        }else{
+            $data['is_published']= 0;
+        }
+        $tags= $data['tags'];
+        unset($data['tags']);
+        $post->tags()->sync($tags);
+
+        $post->update($data);
+    }
 }
