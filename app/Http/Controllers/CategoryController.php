@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Category\StoreRequest;
+use App\Http\Requests\Category\UpdateRequest;
 use Illuminate\Http\Request;
 use App\Models\Category;
 
@@ -16,11 +18,9 @@ class CategoryController extends Controller
         return view('Pages.category.create');
     }
 
-    public function store(){
+    public function store(StoreRequest $request){
     
-        $data = request()->validate([
-            'title'=>'string'
-        ]);
+        $data = $request->validated();
 
         Category::create($data);
         return redirect()->route('categories');
@@ -30,10 +30,8 @@ class CategoryController extends Controller
         return view('Pages.category.edit',compact('category'));
     }
 
-    public function update(Category $category){
-        $data = request()->validate([
-            'title'=>'string'
-        ]);
+    public function update(UpdateRequest $request,Category $category){
+        $data = $request->validated();
         $category->update($data);
         return redirect()->route('categories');
 
