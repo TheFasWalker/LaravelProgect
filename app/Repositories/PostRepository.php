@@ -15,4 +15,16 @@ class PostRepository implements PostRepositoryInterfase
         };
         return $posts;
     }
+    
+    public function store($data){
+        if(isset($data['is_published'])){
+            $data['is_published']= 1;
+        }
+
+        $tags= $data['tags'];
+        unset($data['tags']);
+
+        $post = Post::create($data);
+        $post->tags()->attach($tags);
+    }
 }

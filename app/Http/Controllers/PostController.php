@@ -28,24 +28,18 @@ class PostController extends Controller
         return view('Pages.post.index',compact('posts'));
     }
     public function create(){
+
         $categories = Category::all();
         $tags = Tag::all();
-      return view('Pages.post.create',compact('categories', 'tags'));
+      
+        return view('Pages.post.create',compact('categories', 'tags'));
 
     }
     public function store(StoreRequest $request){
 
         $data = $request->validated();
 
-        if(isset($data['is_published'])){
-            $data['is_published']= 1;
-        }
-
-        $tags= $data['tags'];
-        unset($data['tags']);
-
-        $post = Post::create($data);
-        $post->tags()->attach($tags);
+        $this->postRepository->store($data);
 
         return redirect()->route('data');
     }
