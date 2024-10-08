@@ -9,9 +9,16 @@ use App\Models\Post;
 use App\Models\Category;
 use App\Models\Tag;
 use App\Models\PostTag;
+use App\Repositories\PostRepository;
 
 class PostController extends Controller
 {
+    private $postRepository;
+
+    public function __construct(PostRepository $postRepository){
+        $this->postRepository = $postRepository;
+    }
+
     public function index(Request $request)
     {
         
@@ -19,7 +26,7 @@ class PostController extends Controller
         $posts =match ($published) {
             'yes' => Post::where('is_published', true)->get(),
              'no'=> Post::where('is_published', false)->get(),
-             default => Post::all()
+            default => $this->postRepository->all()
         };
 
         return view('Pages.post.index',compact('posts'));
