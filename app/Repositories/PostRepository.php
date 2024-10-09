@@ -9,9 +9,9 @@ class PostRepository implements PostRepositoryInterfase
     public function all($published){
 
         $posts =match ($published) {
-            'yes' => Post::where('is_published', true)->get(),
-             'no'=> Post::where('is_published', false)->get(),
-             default => Post::all()
+            'yes' => Post::where('is_published', true)->paginate(6),
+             'no'=> Post::where('is_published', false)->paginate(6),
+             default => Post::paginate(6)
         };
         return $posts;
     }

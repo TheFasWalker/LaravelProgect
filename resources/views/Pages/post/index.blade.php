@@ -36,6 +36,10 @@
         :tags='$post->tags'/>
     @endforeach
 
+
+</div>
+<div class="w-full mt-5">
+  {{ $posts->links() }}
 </div>
   @endif
 
