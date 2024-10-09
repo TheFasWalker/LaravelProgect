@@ -16,11 +16,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Tag::factory(20)->create();
+        $tags = Tag::factory(20)->create();
         Category::factory(10)->create();
 
-        Post::factory(10)->create();
-        
+        $posts = Post::factory(10)->create();
+
+        foreach ($posts as $post){
+            $randomCount = rand(1, 3);
+            $tagsId = $tags->random($randomCount)->pluck('id');
+            $post->tags()->attach($tagsId);
+        }
+
         // User::factory(10)->create();
 
         // User::factory()->create([
