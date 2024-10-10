@@ -12,29 +12,43 @@
         $postData=[
           [
             'name'=>'Всего постов',
-            'count'=>'600'
+            'count'=>$elemsCount['postpublished'] + $elemsCount['postnotPublished'] 
           ],
           [
             'name'=>'Опубликовано',
-            'count'=>'25'
+            'count'=>$elemsCount['postpublished']
           ],
           [
             'name'=>'Неопубликовано',
-            'count'=>'100'
+            'count'=>$elemsCount['postnotPublished']
           ]
-        ]
+          ];
+        // elemsCount
+        $tagData=[
+          [
+            'name'=>'Всего Тэгов',
+            'count'=>$elemsCount['tags']  
+          ]
+          ];
+          $categoryData=[
+            [
+              'name'=>'Всего Категорий',
+              'count'=>$elemsCount['categories']  
+            ]
+          ]
         ?>
+        
         <x-admin.homePage.data-card
         title='Посты'
         :data='$postData'
         />
         <x-admin.homePage.data-card
         title='Тэги'
-        :data='$postData'
+        :data='$tagData'
         />
         <x-admin.homePage.data-card
         title='Категории'
-        :data='$postData'
+        :data='$categoryData'
         />
 
 
