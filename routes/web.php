@@ -49,5 +49,9 @@ Route::get('/description', [DescriptionController::class, 'index'])->name('descr
 
 Route::group([ 'prefix'=>'/admin'], function(){
     Route::get('/',[Controller::class, 'index'])->name('admin');
-    Route::get('/posts', [AdminPostController::class,'index'])->name('admin.posts');
+    Route::group(['prefix'=>'/posts'],function(){
+        Route::get('/', [AdminPostController::class,'index'])->name('admin.posts');
+        Route::get('/create',[AdminPostController::class,'create'])->name('admin.post.create');
+    });
+   
 });

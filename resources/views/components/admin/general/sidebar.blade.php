@@ -42,7 +42,7 @@ id="drawer-navigation"
     title="Посты"
     dropdownName='posts'
     createTitle='Создать пост'
-    createLink="#"
+    :createLink="route('admin.post.create')"
     showAllTitle='Показать посты'
     :showAllLink="route('admin.posts')"
   />
