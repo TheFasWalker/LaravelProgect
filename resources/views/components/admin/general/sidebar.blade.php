@@ -37,60 +37,33 @@ id="drawer-navigation"
       title='Общая информация'
       :link="route('admin')"
     />
-    <?php
-      $tagLinks=[
-        [
-          'name'=>'Список тэгов',
-          'link'=>'#'
-        ],
-        [
-          'name'=>'Создать тэг',
-          'link'=>'#'
-        ]
-      ];
-    ?>
-    <x-admin.ui.sidebarDropDown
-      title="Тэги"
-      dropdownName='tags'
-      :dropDownData='$tagLinks'
-      
-    />
-    <?php
-      $tagLinks=[
-        [
-          'name'=>'Список Категорий',
-          'link'=>'#'
-        ],
-        [
-          'name'=>'Создать категорию',
-          'link'=>'#'
-        ]
-      ];
-    ?>
-    <x-admin.ui.sidebarDropDown
-      title="Категории"
-      dropdownName='categories'
-      :dropDownData='$tagLinks'
-      
-    />
-    <?php
-      $postLinks=[
-        [
-          'name'=>'Список постов',
-          'link'=>'#'
-        ],
-        [
-          'name'=>'Создать пост',
-          'link'=>'#'
-        ]
-      ];
-    ?>
-    <x-admin.ui.sidebarDropDown
-      title="Посты"
-      dropdownName='posts'
-      :dropDownData='$postLinks'
-      
-    />
+
+  <x-admin.ui.sidebarDropDown
+    title="Посты"
+    dropdownName='posts'
+    createTitle='Создать пост'
+    createLink="#"
+    showAllTitle='Показать посты'
+    :showAllLink="route('admin.posts')"
+  />
+  <x-admin.ui.sidebarDropDown
+  title="Тэги"
+  dropdownName='tags'
+  createTitle='Создать тэг'
+  createLink="#"
+  showAllTitle='Показать тэг'
+  showAllLink="#"
+/>
+<x-admin.ui.sidebarDropDown
+title="Категории"
+dropdownName='categories'
+createTitle='Создать категорию'
+createLink="#"
+showAllTitle='Показать категории'
+showAllLink="№"
+/>
+  
+   
 
     <!-- <li>
       <button
