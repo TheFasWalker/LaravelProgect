@@ -5,7 +5,9 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\DescriptionController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagController;
-use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\Controller;
+use App\Http\Controllers\Admin\PostController as AdminPostController;
+
 Route::get('/', function () {
     return view('Pages.index');
 });
@@ -45,6 +47,7 @@ Route::prefix('/data')->group(function(){
 Route::get('/description', [DescriptionController::class, 'index'])->name('description');
 
 
-Route::group(['namespace'=>'Admin', 'prefix'=>'/admin'], function(){
-    Route::get('/',[AdminController::class, 'index'])->name('admin');
+Route::group([ 'prefix'=>'/admin'], function(){
+    Route::get('/',[Controller::class, 'index'])->name('admin');
+    Route::get('/posts', [AdminPostController::class,'index'])->name('admin.posts');
 });

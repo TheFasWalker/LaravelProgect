@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers;
 use App\Repositories\AdminRepository;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class Controller extends Controllers\Controller
 {
     public function index(){
       
