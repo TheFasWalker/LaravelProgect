@@ -35,20 +35,20 @@ id="drawer-navigation"
   <ul class="space-y-2">
     <x-admin.ui.sidebarlink
       title='Общая информация'
-      link='#'
+      :link="route('admin')"
     />
-<?php
-$tagLinks=[
-  [
-    'name'=>'Список тэгов',
-    'link'=>'#'
-  ],
-  [
-    'name'=>'Создать тэг',
-    'link'=>'#'
-  ]
-];
-?>
+    <?php
+      $tagLinks=[
+        [
+          'name'=>'Список тэгов',
+          'link'=>'#'
+        ],
+        [
+          'name'=>'Создать тэг',
+          'link'=>'#'
+        ]
+      ];
+    ?>
     <x-admin.ui.sidebarDropDown
       title="Тэги"
       dropdownName='tags'
@@ -56,21 +56,39 @@ $tagLinks=[
       
     />
     <?php
-$tagLinks=[
-  [
-    'name'=>'Список Категорий',
-    'link'=>'#'
-  ],
-  [
-    'name'=>'Создать категорию',
-    'link'=>'#'
-  ]
-];
-?>
+      $tagLinks=[
+        [
+          'name'=>'Список Категорий',
+          'link'=>'#'
+        ],
+        [
+          'name'=>'Создать категорию',
+          'link'=>'#'
+        ]
+      ];
+    ?>
     <x-admin.ui.sidebarDropDown
       title="Категории"
       dropdownName='categories'
       :dropDownData='$tagLinks'
+      
+    />
+    <?php
+      $postLinks=[
+        [
+          'name'=>'Список постов',
+          'link'=>'#'
+        ],
+        [
+          'name'=>'Создать пост',
+          'link'=>'#'
+        ]
+      ];
+    ?>
+    <x-admin.ui.sidebarDropDown
+      title="Посты"
+      dropdownName='posts'
+      :dropDownData='$postLinks'
       
     />
 
