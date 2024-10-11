@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Category\StoreRequest;
+use App\Models\Category;
 use App\Repositories\CategoryRepository;
 use Illuminate\Http\Request;
 
@@ -28,5 +29,10 @@ class CategoryController extends Controller
 
         $this->categoryRepository->store($data);
         return redirect()->route('admin.categories');
+    }
+
+    public function edit(Category $category){
+        return view('Pages.Admin.category.edit',compact('category'));
+
     }
 }
