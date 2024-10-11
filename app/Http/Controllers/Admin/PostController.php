@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function index(){
-        return view('Pages.Admin.PostsPage');
+        return view('Pages.Admin.posts.index');
     }
     public function create(){
         return view ('Pages.Admin.CreatePostPage');
