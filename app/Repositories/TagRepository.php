@@ -7,7 +7,7 @@ use App\Repositories\Interfaces\TagRepositoryInterfase;
 class TagRepository implements TagRepositoryInterfase
 {
     public function all(){
-        return Tag::all();
+        return Tag::paginate(10);
     }
     public function store($data){
         Tag::create($data);

@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\Admin\Controller;
 use App\Http\Controllers\Admin\PostController as AdminPostController;
+use App\Http\Controllers\Admin\TagController as AdminTagController;
 
 Route::get('/', function () {
     return view('Pages.index');
@@ -52,6 +53,9 @@ Route::group([ 'prefix'=>'/admin'], function(){
     Route::group(['prefix'=>'/posts'],function(){
         Route::get('/', [AdminPostController::class,'index'])->name('admin.posts');
         Route::get('/create',[AdminPostController::class,'create'])->name('admin.post.create');
+    });
+    Route::group(['prefix'=>'/tags'],function(){
+       Route::get('/', [AdminTagController::class,'index'])->name('admin.tags');
     });
    
 });
