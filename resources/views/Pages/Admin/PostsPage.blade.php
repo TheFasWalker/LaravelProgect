@@ -54,7 +54,8 @@
                         @foreach ($posts as $post)
                             <x-admin.posts.postpreview
                             :title="$post['title']"
-                            :id="$post['id']"/>
+                            :id="$post['id']"
+                            :activity="$post->is_published"/>
                         @endforeach
 
 
