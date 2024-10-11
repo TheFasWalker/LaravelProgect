@@ -60,7 +60,7 @@ dropdownName='categories'
 createTitle='Создать категорию'
 createLink="#"
 showAllTitle='Показать категории'
-showAllLink="№"
+:showAllLink="route('admin.categories')"
 />
   
    

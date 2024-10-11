@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\DescriptionController;
@@ -56,6 +57,9 @@ Route::group([ 'prefix'=>'/admin'], function(){
     });
     Route::group(['prefix'=>'/tags'],function(){
        Route::get('/', [AdminTagController::class,'index'])->name('admin.tags');
+    });
+    Route::group(['prefix'=>'categories'], function(){
+        Route::get('/',[AdminCategoryController::class, 'index'])->name('admin.categories');
     });
    
 });
