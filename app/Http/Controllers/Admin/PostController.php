@@ -7,10 +7,13 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index(){   
+    public function index(){
         return view('Pages.Admin.PostsPage');
     }
     public function create(){
         return view ('Pages.Admin.CreatePostPage');
+    }
+    public function edit(){
+        return view ('Pages.Admin.EditPost');
     }
 }
