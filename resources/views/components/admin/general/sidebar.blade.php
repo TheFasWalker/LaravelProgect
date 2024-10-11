@@ -51,8 +51,8 @@ id="drawer-navigation"
   dropdownName='tags'
   createTitle='Создать тэг'
   createLink="#"
-  showAllTitle='Показать тэг'
-  showAllLink="#"
+  showAllTitle='Список тэгов'
+  :showAllLink="route('admin.tags')"
 />
 <x-admin.ui.sidebarDropDown
 title="Категории"
