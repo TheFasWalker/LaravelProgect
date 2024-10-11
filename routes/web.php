@@ -40,6 +40,7 @@ Route::group([ 'prefix'=>'/admin'], function(){
         Route::post('/',[AdminCategoryController::class, 'store'])->name('admin.categories.store');
         Route::get('/{category}/edit', [AdminCategoryController::class,'edit'])->name('admin.categories.edit');
         Route::patch('/{category}', [AdminCategoryController::class , 'update'])->name('admin.categories.update');
+        Route::delete('/{category}',[AdminCategoryController::class, 'destroy'])->name('admin.categories.delete');
     });
    
 });

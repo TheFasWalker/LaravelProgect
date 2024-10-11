@@ -42,4 +42,9 @@ class CategoryController extends Controller
         $this->categoryRepository->update($data, $category);
         return redirect()->route('admin.categories');
     }
+
+    public function destroy(Category $category){
+        $category->delete();
+        return redirect()->route('admin.categories');
+    }
 }
