@@ -8,7 +8,7 @@ class CategoryRepository implements CategoryRepositoryInterfase
 {
     public function all()
     {
-        return Category::all();
+        return Category::paginate(10);
     }
     public function store($data)
     {

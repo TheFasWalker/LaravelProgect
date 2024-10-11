@@ -28,7 +28,7 @@ class ViewServiceProvider extends ServiceProvider
     {
         View::composer('Pages.Admin.HomePage', AdminComposer::class);
         View::composer(['Pages.Admin.CreatePostPage','Pages.Admin.tags.index'], TagComposer::class );
-        View::composer('Pages.Admin.CreatePostPage', CategoryComposer::class );
+        View::composer(['Pages.Admin.CreatePostPage','Pages.Admin.category.index'], CategoryComposer::class );
         View::composer('Pages.Admin.PostsPage',PostComposer::class);
 
     }
