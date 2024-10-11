@@ -8,7 +8,6 @@
     <main class="p-4 md:ml-64 h-auto pt-20">
       <h1 class="mx-auto text-center text-5xl font-bold pb-10">Создание поста</h1>
 
-{{ $tags[0]->title }}
 <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
 
     <form>

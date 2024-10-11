@@ -6,13 +6,9 @@ use App\Models\Post;
 
 class PostRepository implements PostRepositoryInterfase
 {
-    public function all($published){
+    public function all(){
 
-        $posts =match ($published) {
-            'yes' => Post::where('is_published', true)->paginate(6),
-             'no'=> Post::where('is_published', false)->paginate(6),
-             default => Post::paginate(6)
-        };
+        $posts = Post::paginate(6);
         return $posts;
     }
     
