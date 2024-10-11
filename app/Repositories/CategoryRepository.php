@@ -12,7 +12,7 @@ class CategoryRepository implements CategoryRepositoryInterfase
     }
     public function store($data)
     {
-
+        Category::create($data);
     }
     public function update($data,$category)
     {
