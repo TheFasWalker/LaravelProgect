@@ -8,7 +8,7 @@
     <main class="p-4 md:ml-64 h-auto pt-20">
       <h1 class="mx-auto text-center text-5xl font-bold pb-10">Создание поста</h1>
 
-
+{{ $tags[0]->title }}
 <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
 
     <form>
@@ -21,27 +21,26 @@
             <label class="inline-flex items-center cursor-pointer">
                 <input type="checkbox" value="" class="sr-only peer">
                 <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Публикация</span>
+                <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Статус публикации</span>
               </label>
 
 <div class="flex flex-col gap-2">
-    <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
+    <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Выберите категориию</label>
     <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-      <option selected>Choose a country</option>
-      <option value="US">United States</option>
-      <option value="CA">Canada</option>
-      <option value="FR">France</option>
-      <option value="DE">Germany</option>
+      @foreach ($categories as $category )
+      <option value="{{ $category->id }}">{{ $category->title }}</option>
+      @endforeach
+ 
+
     </select>
 </div>
 <div class="flex flex-col gap-2">
-    <label for="countries_multiple" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
+    <label for="countries_multiple" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Выберите тэги</label>
     <select multiple id="countries_multiple" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-      <option selected>Choose countries</option>
-      <option value="US">United States</option>
-      <option value="CA">Canada</option>
-      <option value="FR">France</option>
-      <option value="DE">Germany</option>
+      @foreach ($tags as $tag)
+        <option value="{{ $tag->id }}">{{ $tag->title }}</option>
+      @endforeach
+
     </select>
 </div>
 
