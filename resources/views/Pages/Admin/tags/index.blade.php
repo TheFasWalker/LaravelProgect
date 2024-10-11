@@ -52,7 +52,6 @@
                     </thead>
                     <tbody>
                         @foreach ($tags as $tag)
-{{-- {{ $tag->title }} --}}
 <x-admin.tag.preview
 :title="$tag->title"
 :id='$tag->id'
