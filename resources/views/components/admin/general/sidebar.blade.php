@@ -50,7 +50,7 @@ id="drawer-navigation"
   title="Тэги"
   dropdownName='tags'
   createTitle='Создать тэг'
-  createLink="#"
+  :createLink="route('admin.tags.create')"
   showAllTitle='Список тэгов'
   :showAllLink="route('admin.tags')"
 />
@@ -58,7 +58,7 @@ id="drawer-navigation"
 title="Категории"
 dropdownName='categories'
 createTitle='Создать категорию'
-createLink="#"
+:createLink="route('admin.categories.create')"
 showAllTitle='Показать категории'
 :showAllLink="route('admin.categories')"
 />
