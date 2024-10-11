@@ -11,7 +11,7 @@ class PostController extends Controller
         return view('Pages.Admin.posts.index');
     }
     public function create(){
-        return view ('Pages.Admin.CreatePostPage');
+        return view ('Pages.Admin.posts.create');
     }
     public function edit(){
         return view ('Pages.Admin.EditPost');
