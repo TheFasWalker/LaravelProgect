@@ -42,4 +42,9 @@ class TagController extends Controller
         $this->tagRepository->update($data,$tag);
         return redirect()->route('admin.tags');
     }
+    
+    public function destroy(Tag $tag){
+        $tag->delete();
+        return redirect()->route('admin.tags');
+    }
 }

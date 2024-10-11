@@ -32,6 +32,7 @@ Route::group([ 'prefix'=>'/admin'], function(){
        Route::post('/',[AdminTagController::class,'store'])->name('admin.tags.store');
        Route::get('/{tag}/edit',[AdminTagController::class, 'edit'])->name('admin.tags.edit');
        Route::patch('/{tag}',[AdminTagController::class,'update'])->name('admin.tags.update');
+       Route::delete('/{tag}',[AdminTagController::class,'destroy'])->name('admin.tags.delete');
     });
     Route::group(['prefix'=>'categories'], function(){
         Route::get('/',[AdminCategoryController::class, 'index'])->name('admin.categories');
