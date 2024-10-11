@@ -29,6 +29,7 @@ Route::group([ 'prefix'=>'/admin'], function(){
     Route::group(['prefix'=>'/tags'],function(){
        Route::get('/', [AdminTagController::class,'index'])->name('admin.tags');
        Route::get('/create',[AdminTagController::class, 'create'])->name('admin.tags.create');
+       Route::post('/',[AdminTagController::class,'store'])->name('admin.tags.store');
     });
     Route::group(['prefix'=>'categories'], function(){
         Route::get('/',[AdminCategoryController::class, 'index'])->name('admin.categories');
