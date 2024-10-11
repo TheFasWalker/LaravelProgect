@@ -8,7 +8,7 @@ class PostRepository implements PostRepositoryInterfase
 {
     public function all(){
 
-        $posts = Post::paginate(6);
+        $posts = Post::paginate(10);
         return $posts;
     }
     
