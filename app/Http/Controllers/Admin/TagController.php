@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Tag\StoreRequest;
+use App\Http\Requests\Tag\UpdateRequest;
 use App\Models\Tag;
 use App\Repositories\TagRepository;
 use Illuminate\Http\Request;
@@ -31,7 +32,14 @@ class TagController extends Controller
         return redirect()->route('admin.tags');
 
     }
+
     public function edit(Tag $tag){
         return view('Pages.Admin.tags.edit',compact('tag'));
+    }
+
+    public function update(UpdateRequest $request, Tag $tag){
+        $data=$request->validated();
+        $this->tagRepository->update($data,$tag);
+        return redirect()->route('admin.tags');
     }
 }
