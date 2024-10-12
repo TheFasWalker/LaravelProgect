@@ -47,6 +47,7 @@ Route::group([ 'prefix'=>'/admin'], function(){
         Route::get('/',[AdminFirmController::class,'index'])->name('admin.firms');
         Route::get('/create',[AdminFirmController::class, 'create'])->name('admin.firms.create');
         Route::post('/',[AdminFirmController::class,'store'])->name('admin.firm.store');
+        Route::delete('/{firm}',[AdminFirmController::class,'destroy'])->name('admin.firm.delete');
     });
    
 });

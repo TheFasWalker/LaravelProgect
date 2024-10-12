@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Firm\StoreRequest;
+use App\Models\Firm;
 use App\Repositories\FirmRepository;
 use Illuminate\Http\Request;
 
@@ -29,5 +30,10 @@ class FirmController extends Controller
         $this->firmRepository->store($data);
         return redirect()->route('admin.firms');
 
+    }
+
+    public function destroy(Firm $firm){
+        $firm->delete();
+        return redirect()->route('admin.firms');
     }
 }

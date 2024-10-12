@@ -25,7 +25,7 @@
                 <li>
                     <x-admin.ui.deleteElement
                 
-                    route="route('admin.categories.delete', $id)"/>
+                    :route="route('admin.firm.delete', $id)"/>
                 </li>
             </ul>
 
