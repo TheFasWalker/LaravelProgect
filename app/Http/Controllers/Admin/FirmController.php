@@ -36,4 +36,9 @@ class FirmController extends Controller
         $firm->delete();
         return redirect()->route('admin.firms');
     }
+
+    public function show(Firm $firm)
+    {
+        return view('Pages.Admin.firms.show', compact('firm'));
+    }
 }
