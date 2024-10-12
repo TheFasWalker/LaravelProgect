@@ -22,7 +22,16 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name'=>'string',
+            'registration_sity'=>'nullable|string',
+            'index'=>'nullable|integer',
+            'real_adress'=>'nullable|string',
+            'legal_adress'=>'nullable|string',
+            'phone'=>'nullable|string',
+            'logo'=>'nullable|string',
+            'website'=>'nullable|string',
+            'direction'=>'nullable|text',
+            'values'=>'nullable|values',
         ];
     }
 }
