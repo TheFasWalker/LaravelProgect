@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Category;
 use App\View\Composers\AdminComposer;
 use App\View\Composers\CategoryComposer;
+use App\View\Composers\FirmComposer;
 use App\View\Composers\PostComposer;
 use App\View\Composers\TagComposer;
 use Illuminate\Pagination\Paginator;
@@ -30,6 +31,6 @@ class ViewServiceProvider extends ServiceProvider
         View::composer(['Pages.Admin.posts.create','Pages.Admin.tags.index'], TagComposer::class );
         View::composer(['Pages.Admin.posts.create','Pages.Admin.category.index'], CategoryComposer::class );
         View::composer('Pages.Admin.posts.index',PostComposer::class);
-
+        View::composer('Pages.Admin.firms.index',FirmComposer::class);
     }
 }

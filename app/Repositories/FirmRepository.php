@@ -10,4 +10,8 @@ class FirmRepository implements FirmRepositoryInterfase
     {
         Firm::create($data);
     }
+
+    public function all(){
+       return Firm::paginate(10);
+    }
 }

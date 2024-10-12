@@ -12,7 +12,7 @@
 <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
     <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
         <!-- Start coding here -->
-        @if(true)
+        @if(!count($firms))
         <div class="flex flex-col gap-4 w-full">
             <h1 class="text-center mx-auto  text-3xl font-bold pb-10">Фирмы в базе отсутствуют</h1>
             <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
@@ -43,27 +43,29 @@
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            <th scope="col" class="px-4 py-3">Заголовок</th>
-                            <th scope="col" class="px-4 py-3">Статус публикации</th>
+                            <th scope="col" class="px-4 py-3">Название</th>
+                            <th scope="col" class="px-4 py-3">Индекс</th>
                             <th scope="col" class="px-4 py-3">
                                 <span class="sr-only">Actions</span>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($posts as $post)
-                            {{-- <x-admin.posts.postpreview
-                            :title="$post['title']"
-                            :id="$post['id']"
-                            :activity="$post->is_published"/> --}}
+                        @foreach ($firms as $firm)
+                        <x-admin.firms.preview
+                            :title="$firm->name"
+                            :id="$firm->id"
+                            :index="$firm->index"
+                        />
                         @endforeach
+ 
 
 
                     </tbody>
                 </table>
             </div>
             <div class="py-10">
-            {{-- {{ $sity->links() }} --}}
+            {{ $firms->links() }}
         </div>
         @endif
 
