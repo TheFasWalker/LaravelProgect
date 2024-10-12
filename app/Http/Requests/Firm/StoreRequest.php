@@ -30,8 +30,8 @@ class StoreRequest extends FormRequest
             'phone'=>'nullable|string',
             'logo'=>'nullable|string',
             'website'=>'nullable|string',
-            'direction'=>'nullable|text',
-            'values'=>'nullable|values',
+            'direction'=>'nullable|string',
+            'values'=>'nullable|string',
         ];
     }
 }
