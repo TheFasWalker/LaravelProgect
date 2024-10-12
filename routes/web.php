@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\Admin\Controller;
 use App\Http\Controllers\Admin\PostController as AdminPostController;
+use App\Http\Controllers\Admin\FirmController as AdminFirmController; 
 use App\Http\Controllers\Admin\TagController as AdminTagController;
 
 Route::get('/', function () {
@@ -41,6 +42,10 @@ Route::group([ 'prefix'=>'/admin'], function(){
         Route::get('/{category}/edit', [AdminCategoryController::class,'edit'])->name('admin.categories.edit');
         Route::patch('/{category}', [AdminCategoryController::class , 'update'])->name('admin.categories.update');
         Route::delete('/{category}',[AdminCategoryController::class, 'destroy'])->name('admin.categories.delete');
+    });
+    Route::group(['prefix'=>'/firms'],function(){
+        Route::get('/',[AdminFirmController::class,'index'])->name('admin.firms');
+        Route::get('/create',[AdminFirmController::class. 'create'])->name('admin.firms.create');
     });
    
 });

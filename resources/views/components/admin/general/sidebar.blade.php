@@ -62,6 +62,14 @@ createTitle='Создать категорию'
 showAllTitle='Показать категории'
 :showAllLink="route('admin.categories')"
 />
+<x-admin.ui.sidebarDropDown
+title="Фирмы"
+dropdownName='firms'
+createTitle='Добавить фирму'
+:createLink="route('admin.firms.create')"
+showAllTitle='Список фирм'
+:showAllLink="route('admin.firms')"
+/>
   
    
 
