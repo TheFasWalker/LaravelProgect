@@ -10,4 +10,7 @@ class FirmController extends Controller
     public function index(){
         return view('Pages.Admin.firms.index');
     }
+    public function create(){
+        return view('Pages.Admin.firms.create');
+    }
 }
