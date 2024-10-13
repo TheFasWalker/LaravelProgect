@@ -46,9 +46,9 @@
               <a href="{{route('data')}}" class="{{ request()->is('data') ? 'bg-gray-900 text-white' :'text-gray-300 hover:bg-gray-700 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium " >Данные</a>
               <a href="{{route('description')}}" class="{{ request()->is('description') ? 'bg-gray-900 text-white' :'text-gray-300 hover:bg-gray-700 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium " >Описание</a>
 
-              @if(auth()->user() && (auth()->user()->role == 2 || auth()->user() == 3))
-              <a href="{{route('admin')}}" class="{{ request()->is('description') ? 'bg-gray-900 text-white' :'text-gray-300 hover:bg-gray-700 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium " >Админ панель</a>
-              @endif
+                @if(auth()->user()->role != null && auth()->user() && (auth()->user()->role == 2 || auth()->user() == 3)  )
+                  <a href="{{route('admin')}}" class="{{ request()->is('description') ? 'bg-gray-900 text-white' :'text-gray-300 hover:bg-gray-700 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium " >Админ панель</a>
+                @endif
             </div>
           </div>
         </div>
