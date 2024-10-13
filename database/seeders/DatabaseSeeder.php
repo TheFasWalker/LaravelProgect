@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
         $roles=['user','moder','admin'];
 
         foreach ($roles as $role){
-            Role::factory()->create([
+            Role::create([
                 'role'=>$role
             ]);
         }

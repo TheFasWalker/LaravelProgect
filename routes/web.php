@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\Controller;
 use App\Http\Controllers\Admin\PostController as AdminPostController;
 use App\Http\Controllers\Admin\FirmController as AdminFirmController; 
 use App\Http\Controllers\Admin\TagController as AdminTagController;
+use App\Http\Middleware\AdminPanelMiddleware;
 
 Route::get('/', function () {
     return view('Pages.index');
@@ -18,7 +19,7 @@ Route::get('/data',function(){
 Route::get('/description', [DescriptionController::class, 'index'])->name('description');
 
 
-Route::group([ 'prefix'=>'/admin'], function(){
+Route::group([ 'prefix'=>'/admin', 'middleware'=>AdminPanelMiddleware::class], function(){
     Route::get('/',[Controller::class, 'index'])->name('admin');
     Route::group(['prefix'=>'/posts'],function(){
         Route::get('/', [AdminPostController::class,'index'])->name('admin.posts');
