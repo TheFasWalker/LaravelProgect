@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Firm\StoreRequest;
+use App\Http\Requests\Firm\UpdateRequest;
 use App\Models\Firm;
 use App\Repositories\FirmRepository;
 use Illuminate\Http\Request;
@@ -44,5 +45,12 @@ class FirmController extends Controller
     public function edit ( Firm $firm)
     {
         return view ('Pages.Admin.firms.edit',compact('firm'));
+    }
+    public function update(Firm $firm, UpdateRequest $request)
+    {
+        $data= $request->validated();
+        $this->firmRepository->update($data, $firm);
+        return view('Pages.Admin.firms.show', compact('firm'));
+        
     }
 }

@@ -12,8 +12,9 @@
 
 <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
 
-    <form method="POST" action="{{ route('admin.firm.store') }}">
+    <form method="POST" action="{{ route('admin.firm.update', $firm->id) }}">
         @csrf
+        @method('PATCH')
         <div class="grid gap-6 mb-6 md:grid-cols-2">
             <div>
                 <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Название фирмы</label>

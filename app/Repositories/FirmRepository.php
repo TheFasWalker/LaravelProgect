@@ -14,4 +14,9 @@ class FirmRepository implements FirmRepositoryInterfase
     public function all(){
        return Firm::paginate(10);
     }
+    
+    public function update($data,$firm)
+    {
+        $firm->update($data);
+    }
 }
