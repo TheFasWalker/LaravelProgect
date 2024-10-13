@@ -13,7 +13,7 @@ use App\Http\Controllers\Admin\TagController as AdminTagController;
 
 Route::get('/', function () {
     return view('Pages.index');
-});
+})->name('main');
 Route::get('/data',function(){
     return redirect('/admin');
 })->name('data');
