@@ -7,7 +7,6 @@ use App\Http\Requests\Tag\StoreRequest;
 use App\Http\Requests\Tag\UpdateRequest;
 use App\Models\Tag;
 use App\Repositories\TagRepository;
-use Illuminate\Http\Request;
 
 class TagController extends Controller
 {

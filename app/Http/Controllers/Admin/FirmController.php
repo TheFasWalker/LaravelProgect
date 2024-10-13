@@ -7,7 +7,6 @@ use App\Http\Requests\Firm\StoreRequest;
 use App\Http\Requests\Firm\UpdateRequest;
 use App\Models\Firm;
 use App\Repositories\FirmRepository;
-use Illuminate\Http\Request;
 
 class FirmController extends Controller
 {
