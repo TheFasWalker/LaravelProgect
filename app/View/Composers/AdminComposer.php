@@ -41,10 +41,24 @@ class AdminComposer
                 'count'=>$elemsCount['categories']  
               ]
               ];
+        $userData = [
+          [
+            'name'=> 'Всего пользователей',
+            'count'=> $elemsCount['users']
+          ]
+          ];
+          $firmsData = [
+            [
+              'name'=> 'Всег фирм',
+              'count'=> $elemsCount['firms']
+            ]
+            ];
         $data = [
                 'categoryData'=> $categoryData , 
                 'tagData'=> $tagData ,
-                'postData'=> $postData
+                'postData'=> $postData,
+                'usersData'=>$userData,
+                'firmsData'=>$firmsData
               ];
 
         $view->with('elemsCount',$data);
