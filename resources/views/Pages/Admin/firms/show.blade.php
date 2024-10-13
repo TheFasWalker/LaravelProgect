@@ -36,6 +36,12 @@
                         <span>Город регистрации: </span>
                         <span>{{ $firm->registration_sity }}</span>
                     </div>
+                    @endif                    
+                    @if(isset($firm->index))
+                    <div class="">
+                        <span>Индекс фирмы: </span>
+                        <span>{{ $firm->index }}</span>
+                    </div>
                     @endif
                     @if(isset($firm->real_adress))
                     <div class="">
@@ -81,8 +87,8 @@
                 </div>
             @endif
             <div class=" flex flex-row gap-4 pt-9 w-full justify-end">
-                <a class=" bg-slate-400 px-4 py-2 rounded-xl hover:text-white hover:shadow-lg" href="#">Назад</a>
-                <a class=" bg-slate-400 px-4 py-2 rounded-xl hover:text-white hover:shadow-lg" href="#">Редактирвоать</a>
+                <a class=" bg-slate-400 px-4 py-2 rounded-xl hover:text-white hover:shadow-lg" href="{{ route('admin.firms') }}">К списку категорий</a>
+                <a class=" bg-slate-400 px-4 py-2 rounded-xl hover:text-white hover:shadow-lg" href="{{ route('admin.firm.edit', $firm->id) }}">Редактирвоать</a>
                 <form action="{{ route('admin.firm.delete', $firm->id) }}" method="POST">
                     @csrf
                     @method('DELETE')

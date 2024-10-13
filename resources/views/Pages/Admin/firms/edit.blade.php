@@ -7,7 +7,7 @@
 
     <main class="p-4 md:ml-64 h-auto pt-20">
       <h1 class="mx-auto text-center text-5xl font-bold pb-10">Редактирование {{ $firm->name }}</h1>
-      <a href="" class="bg-slate-400 px-4 py-2 rounded-xl hover:text-white hover:shadow-lg block w-fit mb-10"> Назад</a>
+      <a href="{{ route('admin.firms')  }}" class="bg-slate-400 px-4 py-2 rounded-xl hover:text-white hover:shadow-lg block w-fit mb-10"> к списку </a>
 
 
 <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
