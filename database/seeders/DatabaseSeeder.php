@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Role;
 use App\Models\Tag;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -27,12 +28,20 @@ class DatabaseSeeder extends Seeder
             $post->tags()->attach($tagsId);
         }
 
+
+        $roles=['user','moder','admin'];
+
+        foreach ($roles as $role){
+            Role::factory()->create([
+                'role'=>$role
+            ]);
+        }
         // User::factory(10)->create();
 
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'admin@admin.admin',
+        User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'admin@admin.admin',
 
-        // ]);
+        ]);
     }
 }
