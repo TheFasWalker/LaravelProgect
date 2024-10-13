@@ -41,4 +41,8 @@ class FirmController extends Controller
     {
         return view('Pages.Admin.firms.show', compact('firm'));
     }
+    public function edit ( Firm $firm)
+    {
+        return view ('Pages.Admin.firms.edit',compact('firm'));
+    }
 }
