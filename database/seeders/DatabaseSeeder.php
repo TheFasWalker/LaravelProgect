@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Role;
+use App\Models\Sity;
 use App\Models\Tag;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -36,11 +37,18 @@ class DatabaseSeeder extends Seeder
                 'role'=>$role
             ]);
         }
+        $sity=['Санкт-Петербург','Казань','Москва','Нижний Новгород','Екатеринбург','Новосибирск','Челябинск','Самара','Уфа','Красноярск','Волгоград','Ростов-на-Дону','Тюмень','Казань','Пермь','Ижевск','Оренбург','Саратов','Тула','Томск'];
         // User::factory(10)->create();
 
+        foreach($sity as $sity_elem){
+            Sity::create([
+                'sity'=>$sity_elem
+            ]);
+        }
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'admin@admin.admin',
+            'role'=>3
 
         ]);
     }
