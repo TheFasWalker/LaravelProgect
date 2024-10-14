@@ -3,27 +3,17 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Api\FirmResource;
-use App\Models\Firm;
-use App\Repositories\FirmRepository;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class FirmController extends Controller
+class CategoryController extends Controller
 {
-    private $firmRepository;
-
-    public function __construct(FirmRepository $firmRepository)
-    {
-        $this->firmRepository = $firmRepository;
-    }
-
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $firms = $this->firmRepository->all();
-        return FirmResource::collection($firms);
+        //
     }
 
     /**
@@ -45,7 +35,7 @@ class FirmController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Firm $firm)
+    public function show(Category $category)
     {
         //
     }
@@ -53,7 +43,7 @@ class FirmController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Firm $firm)
+    public function edit(Category $category)
     {
         //
     }
@@ -61,7 +51,7 @@ class FirmController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Firm $firm)
+    public function update(Request $request, Category $category)
     {
         //
     }
@@ -69,7 +59,7 @@ class FirmController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Firm $firm)
+    public function destroy(Category $category)
     {
         //
     }
