@@ -12,4 +12,8 @@ class Firm extends Model
     use SoftDeletes;
     protected $table = 'firms';
     protected $guarded =[];
+
+    public function sity(){
+        return $this->belongsTo(Sity::class,'sity_id','id');
+    }
 }

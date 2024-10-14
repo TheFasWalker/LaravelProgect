@@ -36,7 +36,8 @@
                         <span>Город регистрации: </span>
                         <span>{{ $firm->registration_sity }}</span>
                     </div>
-                    @endif                    
+                    @endif  
+                    {{ $firm->sity->sity }}                  
                     @if(isset($firm->index))
                     <div class="">
                         <span>Индекс фирмы: </span>
