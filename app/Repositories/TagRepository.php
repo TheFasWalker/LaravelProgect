@@ -15,4 +15,7 @@ class TagRepository implements TagRepositoryInterfase
     public function update($data,$tag){
         $tag->update($data);
     }
+    public function findById($id){
+        Tag::findOrFail($id);
+    }
 }
