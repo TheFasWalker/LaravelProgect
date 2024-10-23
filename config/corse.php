@@ -6,7 +6,7 @@ return [
 
     'allowed_methods' => ['*'], // Allow all HTTP methods (GET, POST, etc.)
 
-    'allowed_origins' => ['*'], // Allow all origins; restrict this for production
+    'allowed_origins' => ['http://localhost:5174'], // Allow all origins; restrict this for production
 
     'allowed_origins_patterns' => [], // Patterns for allowed origins (optional)
 
