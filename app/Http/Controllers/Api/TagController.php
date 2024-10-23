@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Tag\StoreRequest;
 use App\Http\Resources\Api\TagResource;
 use App\Models\Tag;
 use App\Repositories\TagRepository;
@@ -29,17 +30,20 @@ class TagController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create( )
     {
-        //
+       //
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        //
+        $data = $request->validated();
+       $createdTag = $this->tagRepository->storeForApi($data);
+
+        return response()->json($createdTag, 200);
     }
 
     /**

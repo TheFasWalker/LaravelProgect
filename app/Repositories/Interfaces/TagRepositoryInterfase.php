@@ -7,4 +7,5 @@ interface TagRepositoryInterfase
     public function all();
     public function store($data);
     public function update($data,$tag);
+    public function storeForApi ($data);
 }

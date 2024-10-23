@@ -18,4 +18,9 @@ class TagRepository implements TagRepositoryInterfase
     public function findById($id){
         Tag::findOrFail($id);
     }
+    public function storeForApi($data){
+        $tag= Tag::create($data);
+        $createdEl = Tag::find($tag->id);
+        return $createdEl;
+    }
 }
