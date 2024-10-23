@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Tag\UpdateRequest;
 use App\Http\Requests\Tag\StoreRequest;
 use App\Http\Resources\Api\TagResource;
 use App\Models\Tag;
@@ -65,9 +66,11 @@ class TagController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Tag $tag)
+    public function update(UpdateRequest $request ,Tag $tag)
     {
-        //
+        $data=$request->validated();
+        $this->tagRepository->update($data,$tag);
+        return response()->json($tag , 200);    
     }
 
     /**
