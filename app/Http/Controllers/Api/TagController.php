@@ -72,5 +72,6 @@ class TagController extends Controller
     public function destroy(Tag $tag)
     {
         $tag->delete();
+        return response()->json(['message' => 'Tag deleted successfully.'], 200);
     }
 }
