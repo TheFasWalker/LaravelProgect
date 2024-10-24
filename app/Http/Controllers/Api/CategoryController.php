@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Tag\StoreRequest;
 use App\Http\Resources\Api\CategoryResource;
 use App\Models\Category;
 use App\Repositories\CategoryRepository;
@@ -36,9 +37,11 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        //
+        $data = $request ->validated();
+        $createdCategory = $this ->categoryRepository->storeForApi($data);
+        return response()->json($createdCategory, 200);
     }
 
     /**

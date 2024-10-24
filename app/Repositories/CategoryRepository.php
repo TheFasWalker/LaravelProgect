@@ -18,4 +18,9 @@ class CategoryRepository implements CategoryRepositoryInterfase
     {
         $category->update($data);
     }
+    public function storeForApi ($data){
+        $category = Category::create($data);
+        $creadedEl = Category::find($category->id);
+        return $creadedEl;
+    }
 }
