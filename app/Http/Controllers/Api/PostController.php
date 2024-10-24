@@ -3,17 +3,33 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\PostResource;
 use App\Models\Post;
+use App\Repositories\PostRepository;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    private $postRepository;
+
+    public function __construct(PostRepository $postRepository)
+    {
+        $this->postRepository = $postRepository;
+    }
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
+    public function index(Request $request)
+    {   
+        $data = $request->query();
+        // dd();
+        // $query = $request->query();
+        // $key = array_keys($query)[0];
+        // $value = $query[$key];
+
+        $posts = $this->postRepository->getData($data);
+        // dd($posts);
+        return PostResource::collection(($posts));
     }
 
     /**

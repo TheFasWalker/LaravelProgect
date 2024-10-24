@@ -11,7 +11,20 @@ class PostRepository implements PostRepositoryInterfase
         $posts = Post::paginate(10);
         return $posts;
     }
+
     
+    public function getData($data){
+
+        if($data !==[]){
+            $key = array_keys($data)[0];
+            $value = $data[$key];
+            return Post::where($key, $value)->where('deleted_at',null)->paginate(10);
+
+        }else{
+            return Post::paginate(10);
+        }
+        
+    }
     public function store($data){
         if(isset($data['is_published'])){
             $data['is_published']= 1;
