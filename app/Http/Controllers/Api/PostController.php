@@ -20,15 +20,22 @@ class PostController extends Controller
      * Display a listing of the resource.
      */
     public function index(Request $request)
-    {   
+    {
         $data = $request->query();
-        // dd();
-        // $query = $request->query();
-        // $key = array_keys($query)[0];
-        // $value = $query[$key];
-
         $posts = $this->postRepository->getData($data);
-        // dd($posts);
+
+        // $data = $request->query();
+        // $query = Post::where('deleted_at', null);
+
+        // if (!empty($data)) {
+        //     foreach ($data as $key => $value) {
+        //         if (!empty($value)) {
+        //             $query->where($key, 'LIKE', '%' . $value . '%');
+        //         }
+        //     }
+        // }
+
+        // $posts = $query->paginate(10);
         return PostResource::collection(($posts));
     }
 
