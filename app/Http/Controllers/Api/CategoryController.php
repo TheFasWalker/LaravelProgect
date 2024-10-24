@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Tag\UpdateRequest;
 use App\Http\Requests\Tag\StoreRequest;
 use App\Http\Resources\Api\CategoryResource;
 use App\Models\Category;
@@ -63,9 +64,13 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Category $category)
+    public function update(UpdateRequest $request, Category $category)
     {
-        //
+        $data=$request->validated();
+        $this->categoryRepository->update($data,$category);
+        return response()->json($category,200);
+
+        
     }
 
     /**
